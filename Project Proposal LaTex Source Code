@@ -1,0 +1,83 @@
+
+\documentclass[11pt]{article}
+\usepackage[document]{ragged2e}
+\begin{document}
+
+\begin{title page}
+    
+    \begin{center}
+        \line(1,0){250}\\[0.25cm]
+        \Huge{\bfseries Tutor Plus}\\
+        \line(1,0){250}\\[0.25cm]
+        \Large{Project: CSE311, Sec 2\\North South University, Summer 2021}\\
+        \line(1,0){250}\\[3cm]
+    \end{center}
+    
+    \begin{flushleft}
+    \large{\bfseries Contributors}\\
+    \begin{itemize}
+        \item Al Ibne Siam, 2012072042
+        \item Iftekhar Amin, 1821523642
+        \item Abu Nadim Peyal, 1822003642
+    \end{itemize}
+    \\[1.5cm]
+    \end{flushleft}
+    
+    \line(1,0){400}\\[1.5cm]
+    
+    \begin{flushright}
+    \large{\bfseries Course Faculty:}\\
+    \textsc{MR. AHMED FAHMIN\\Lecturer}\\[0.5cm]
+    \large{\bfseries Lab Instructor:}\\
+    \textsc{Nazmul Alam Dipto}\\[1.5cm]
+    \end{flushright}
+    
+\end{title page}
+
+\begin{page1}
+    \begin{flushleft}
+    
+    \large{\bfseries Introduction}\\[0.25cm]
+    \justify{Due to the busy schedule of parents, private tuition for children has become a form of day-to-day convenience. So, it is one of the most accessible sources of income for young students in Bangladesh. However, most of us rely on third-party media to connect parents or students to tutors. Additionally, there are long waiting times, partial treatments, and tutors paying a high percentage of their salary as media fees. So, this website provides a marketplace for tuition while cutting out the middle man and media fees in the process.}\\[0.5cm]
+    
+    \large{\bfseries Objectives:}
+    \begin{itemize}
+        \item Give tutors easy access to tuition.
+        \item Tutors will be able to chose preferred location, curriculum, subjects and salary range.
+        \item Tutors will be able build a CV, where they present their academic qualifications.
+        \item Parents/students will be able to choose academic qualification of tutors.
+        \item Provide a private chat box for negotiation or discussion. \\[0.5cm]
+    \end{itemize}
+    
+    \large{\bfseries Target Customer:}
+    \begin{enumerate}
+        \item Parents/Students: They will be able to view a tutors picture and academic qualifications.
+        \item  Tutors: They will be able to view students requirements, days and time, offering salary etc.\\[2cm]
+    \end{enumerate}
+    
+    \end{flushleft}
+\end{page1}
+
+\begin{page2}
+    \begin{flushleft}
+    \large{\bfseries Tools:}
+    \begin{itemize}
+        \item HTML5
+        \item CSS
+        \item Javascript
+        \item MySql
+        \item PHP\\[1cm]
+    \end{itemize}
+    
+    \large{\bfseries Website Features:}
+    \justify{Opening page will ask if the user is looking for tutor or tuition.}
+    \justify{People looking for Tutors will be taken to another page to either login or register as a student. Students have to submit the following information: Name, class, location, region, curriculum and subjects. They will then be presented with many CVs of tutors. They can either reject it or short-list before moving on to the next one.}
+    \justify{People looking for tuition will be taken to a page where they can either login or register as tutor. Tutors must produce information like name, academic qualification, class and curriculum they want to teach, preferred locations and salary range. They also have the options to provide their picture and pictures of their qualifications to enhance their CV. They will then be presented with tuition offers based on their preferences. They can either reject or apply for a tuition.}
+    \justify{When a tutor who has been short listed applies for a tuition, a match is made and the two party is then taken to a private chat box for further discussion and negotiation. The websites also provides options to change their info and requirements. It will also provide options to stay active or inactive once they find a tuition.}\\[3cm]
+    
+    \large{\bfseries Value Propositions:}
+    \justify{Reduce hassle of contacting tuition media and enables parents/students to talk directly to tutors. No long waiting time. Tutors will not need to pay for media fees. This website provides tutors and parents with lots of options and cuts out any kind of ambiguity.}
+\end{flushleft}
+\end{page2}
+
+\end{document}
