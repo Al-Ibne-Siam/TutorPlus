@@ -68,25 +68,6 @@ hr {
 	margin-bottom: 5%;
 }
 
-.dropdown{
-	display: inline-block;
-	width: 30%;
-}
-
-#dropdownSignUp{
-	width: 100%;
-}
-
-#loginButton{
-	display: inline-block;
-	margin-left: 5%;
-	margin-top: 1%;
-}
-
-.dropdown-menu{
-	background: #f77812;
-}
-
 /*===========/==========*/
 
 /*===========Head===========*/
