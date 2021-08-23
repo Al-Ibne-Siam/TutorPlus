@@ -1,5 +1,6 @@
 var uname = document.forms['login_form']['uname'];
 var password = document.forms['login_form']['password'];
+var pnum = document.forms['send_form']['p_num'];
 var npassword = document.forms['otp_form']['new_password'];
 var cnpassword = document.forms['otp_form']['confirm_password'];
 var otp = document.forms['otp_form']['otp_num'];
@@ -9,6 +10,7 @@ var otp_error = document.getElementById('otp_error');
 var np_error = document.getElementById('np_error');
 var cnp_error = document.getElementById('cnp_error');
 var npmatch_error = document.getElementById('npmatch_error');
+var pnum_error = document.getElementById('pnum_error');
 
 function validated(){
   no_uname.style.display = "none";
@@ -58,3 +60,15 @@ function validate_reset(){
 
   return true;
 }
+/*
+function pnumValidated(){
+  pnum_error.style.display = "none";
+  id(pnum.value==''||pnum.value==null){
+    pnum.style.border = "2px border";
+    pnum_error.style.block = "block";
+    pnum.focus();
+    return false;
+  }
+  return true;
+}
+*/

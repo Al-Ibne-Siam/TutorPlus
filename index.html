@@ -112,7 +112,15 @@
           <div class="modal-body">
             <h4 class="modal-headline OTP-headline"><strong>Check your phone for OTP number</strong></h4>
             <div class="d-flex flex-column text-center">
+              <form class="send-form" method="post" name="send_form" onsubmit="return pnumValidated()">
+                <input type="text" class="form-control pnum-box" id="send" placeholder="Enter Phone Number" name="p_num">
+                <button type="submit" class="btn sendModal-btn">Send OTP</button>
+                <div class="error" id="pnum_error">
+                  *Phone number can not be empty!
+                </div>
+              </form>
               <form class="OTP-form" method="post" name="otp_form" onsubmit="return validate_reset()">
+
                 <input type="text" class="form-control" id="otp" placeholder="Enter OTP Number" name="otp_num">
                 <div class="error" id="otp_error">
                   *OTP can not be empty! Please check your phone again.

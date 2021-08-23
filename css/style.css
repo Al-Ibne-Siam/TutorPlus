@@ -138,6 +138,18 @@ hr {
 
 /*=========forget form=======*/
 
+.pnum-box{
+	display: inline-block;
+	width: 50%;
+}
+
+.sendModal-btn{
+	margin-left: 5%;
+	display: inline-block;
+	width: 20%;
+	margin-top: -1%;
+}
+
 .reset-form{
 	margin-left: 10%;
 	width: 80%;
