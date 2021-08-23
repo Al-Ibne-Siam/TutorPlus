@@ -78,15 +78,24 @@
             <h4 class="modal-headline"><strong>Login Your Account</strong></h4>
             <div class="flex-column">
               <!--flex columns align items vertically-->
-              <form class="login-form" method="post">
+              <form class="login-form" method="post" name="login_form" onsubmit="return validated()">
                 <!--form control is for visuals-->
-                <input type="text" class="form-control" id="username-login" placeholder="Your user name">
-                <input type="password" class="form-control" id="password-login" placeholder="Your password">
+                <input type="text" class="form-control" id="username-login" placeholder="Your user name" name="uname">
+                <div class="error" id="uname_error">
+                  *Username can not be empty!
+                </div>
+                <input type="password" class="form-control" id="password-login" placeholder="Your password" name="password">
+                <div class="error" id="password_error">
+                  *Password can not be empty!
+                </div>
                 <!--toggles forgot password modal, data-dismiss closes the current modal-->
                 <a class="close" data-dismiss="modal" data-toggle="modal" data-target="#forgotModal">
-                  <h6 class="forgot">Forgot password?</h6>
+                  <h6 class="forgot" type="submit">Forgot password?</h6>
+                  <div class="error" id="no_uname">
+                    *Please enter your username to reset password!
+                  </div>
                 </a>
-                <button type="button" class="btn btn-lg loginModal-btn">Login</button>
+                <button type="submit" class="btn btn-lg loginModal-btn">Login</button>
               </form>
             </div>
           </div>
@@ -103,11 +112,23 @@
           <div class="modal-body">
             <h4 class="modal-headline OTP-headline"><strong>Check your phone for OTP number</strong></h4>
             <div class="d-flex flex-column text-center">
-              <form class="OTP-form" method="post">
-                <input type="text" class="form-control" id="otp" placeholder="Enter OTP Number">
-                <input type="password" class="form-control" id="new-password-forgot" placeholder="New password">
-                <input type="password" class="form-control" id="confirm-password-forgot" placeholder="Confirm New password">
-                <button type="button" class="btn btn-lg forgotModal-btn">Confirm and Login</button>
+              <form class="OTP-form" method="post" name="otp_form" onsubmit="return validate_reset()">
+                <input type="text" class="form-control" id="otp" placeholder="Enter OTP Number" name="otp_num">
+                <div class="error" id="otp_error">
+                  *OTP can not be empty! Please check your phone again.
+                </div>
+                <input type="password" class="form-control" id="new-password-forgot" placeholder="New password" name="new_password">
+                <div class="error" id="np_error">
+                  *Please enter a new password!
+                </div>
+                <input type="password" class="form-control" id="confirm-password-forgot" placeholder="Confirm New password" name="confirm_password">
+                <div class="error" id="cnp_error">
+                  *Please confirm the new password!
+                </div>
+                <div class="error" id="npmatch_error">
+                  *New Password and Confirmed New Password do not match!
+                </div>
+                <button type="submit" class="btn btn-lg forgotModal-btn">Confirm and Login</button>
               </form>
             </div>
           </div>
@@ -223,6 +244,8 @@
   <div class="lower-body">
     <p>All rights reserved ©</p>
   </div>
+
+  <script src="js\main.js"></script>
 
 </body>
 

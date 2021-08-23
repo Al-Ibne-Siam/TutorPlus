@@ -36,7 +36,7 @@ hr {
 }
 
 .forgotModal-btn{
-	margin-left: 35%;
+	margin-left: 100%;
 	margin-bottom: 5%;
 }
 
@@ -114,6 +114,14 @@ hr {
   background-color: #ecaf7f;
 }
 
+.error{
+	display: none;
+	margin-top: -3%;
+	font-size: 1rem;
+	margin-bottom: 3%;
+	color: white;
+}
+
 .login-form{
   margin-left: 5%;
 	width: 90%;
@@ -130,6 +138,11 @@ hr {
 
 /*=========forget form=======*/
 
+.reset-form{
+	margin-left: 10%;
+	width: 80%;
+}
+
 .OTP-headline{
 	margin-left: 15%;
 }
@@ -137,6 +150,23 @@ hr {
 .OTP-form{
 	width: 80%;
 	margin-left: 10%;
+}
+
+.phone_number{
+	margin-bottom: 5%;
+}
+.numField{
+	display: inline-block;
+	margin-left: -5%;
+	width: 65%;
+}
+
+.send-btn{
+	display: inline-block;
+	width: 25%;
+	margin-left: 5%;
+	margin-right: -5%;
+	margin-top: -1%;
 }
 
 /*=======Why-section========*/
