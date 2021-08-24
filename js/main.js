@@ -60,15 +60,13 @@ function validate_reset(){
 
   return true;
 }
-/*
+
 function pnumValidated(){
   pnum_error.style.display = "none";
-  id(pnum.value==''||pnum.value==null){
+  if(pnum.value==''||pnum.value==null){
     pnum.style.border = "2px border";
-    pnum_error.style.block = "block";
+    pnum_error.style.display = "block";
     pnum.focus();
     return false;
   }
-  return true;
 }
-*/

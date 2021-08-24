@@ -139,10 +139,10 @@ hr {
 /*=========forget form=======*/
 
 .pnum-box{
+	margin-left: 5%;
 	display: inline-block;
-	width: 50%;
+	width: 60%;
 }
-
 .sendModal-btn{
 	margin-left: 5%;
 	display: inline-block;
