@@ -5,8 +5,16 @@ var cpw = document.getElementById('cpw');
 var mail = document.getElementById('mail');
 var pnum = document.getElementById('pnum');
 var tnc = document.getElementById('tnc');
+var usertype = document.getElementById('usertype-selection');
+var registerform = document.getElementById('registerform');
+
 
 function validRegistration(){
+
+  if(usertype.value=="1"){
+    registerform.action = "tutor.html";
+  } else registerform.action = "student.html";
+
   if(fname.value==''||fname.value==null){
     alert("Please fill all the fields");
     return false;
