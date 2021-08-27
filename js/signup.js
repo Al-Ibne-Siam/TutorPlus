@@ -12,7 +12,7 @@ var registerform = document.getElementById('registerform');
 function validRegistration(){
 
   if(usertype.value=="1"){
-    registerform.action = "tutor.html";
+    registerform.action = "instructor.html";
   } else registerform.action = "student.html";
 
   if(fname.value==''||fname.value==null){
