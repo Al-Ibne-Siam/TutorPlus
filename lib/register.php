@@ -15,16 +15,16 @@
 
     if(mysqli_num_rows($run_query) > 0) {
       echo "<script> alert('User already exists. Try a new email') </script>";
-      echo "<script>window.open('./../user-registration-form.php') </script>";
+      echo "<script>window.open('./../user-registration-form.php','_self') </script>";
       exit();
     } else {
-      $insert_user = "insert into user(fname, lname, email, password, phone_num, gender)
+      $insert_user = "insert into user(fname, lname, email, password, pnum, gender)
       value('$fname','$lname','$email','$password','$pnum','$gender');";
       mysqli_query($conn, $insert_user);
     }
 
   } else {
-    echo "<script>window.open('./../user-registration-form.php') </script>";
+    echo "<script>window.open('./../user-registration-form.php','_self') </script>";
     exit();
   }
 
