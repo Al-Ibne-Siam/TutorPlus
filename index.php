@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -85,9 +86,9 @@
               <!--flex columns align items vertically-->
               <form class="login-form" method="post" name="login_form"  action="lib/login_process.php" onsubmit="return validated()">
                 <!--form control is for visuals-->
-                <input type="text" class="form-control" id="username-login" placeholder="Your user name" name="uname">
+                <input type="text" class="form-control" id="username-login" placeholder="Your user name" name="email">
                 <div class="error" id="uname_error">
-                  *Username can not be empty!
+                  *email can not be empty!
                 </div>
                 <input type="password" class="form-control" id="password-login" placeholder="Your password" name="password">
                 <div class="error" id="password_error">

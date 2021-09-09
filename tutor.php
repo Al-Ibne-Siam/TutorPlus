@@ -1,3 +1,11 @@
+
+<?php
+  	session_start();
+		if(!isset($_SESSION['email'])){
+			header("Location: index.php");
+		}
+?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Educo
@@ -48,6 +56,7 @@ Purchase:
 						  <li class="active"><a href="#a" data-toggle="tab">profile</a></li>
 						  <li><a href="#b" data-toggle="tab">students <span>4</span></a></li>
 						  <li><a href="#c" data-toggle="tab">activity</a></li>
+							<li><a href="lib/logout.php">logout</a></li>
 						</ul>
 					</div>
 				</div>

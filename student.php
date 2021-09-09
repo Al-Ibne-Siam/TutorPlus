@@ -1,3 +1,12 @@
+<?php
+  	session_start();
+		if(!isset($_SESSION['email'])){
+			header("Location: index.php");
+		}
+?>
+
+
+
 <!DOCTYPE html>
 <!--
 Template Name: Educo
@@ -50,7 +59,7 @@ Purchase:
 						  <li><a href="#notification" data-toggle="tab">notifications <span>0</span></a></li>
 						  <li><a href="#profile" data-toggle="tab">profile</a></li>
 						  <li><a href="#setting" data-toggle="tab">setting</a></li>
-						  <li><a href="#forums" data-toggle="tab">forums</a></li>
+						  <li><a href="lib/logout.php">logout</a></li>
 						</ul>
 					</div>
 				</div>
@@ -496,32 +505,6 @@ Purchase:
 								</ul>
 
 								<!-- Tab panes -->
-								<div class="tab-content">
-									<div role="tabpanel" class="tab-pane active" id="started">
-									<div class="ed_dashboard_inner_tab">
-										<h2>forum topics started</h2>
-										<span>You have not created any topics.</span>
-									</div>
-									</div>
-									<div role="tabpanel" class="tab-pane" id="replies">
-									<div class="ed_dashboard_inner_tab">
-										<h2>forum replies created</h2>
-										<span>You have not replied to any topics.</span>
-									</div>
-									</div>
-									<div role="tabpanel" class="tab-pane" id="favourite">
-									<div class="ed_dashboard_inner_tab">
-										<h2>favorite forum topics</h2>
-										<span>You currently have no favourite topics.</span>
-									</div>
-									</div>
-									<div role="tabpanel" class="tab-pane" id="subscribed">
-									<div class="ed_dashboard_inner_tab">
-										<h2>subscribed forums</h2>
-										<span>You are not currently subscribed to any forums.</span>
-									</div>
-									</div>
-								</div>
 
 							</div><!--tab End-->
 						</div>

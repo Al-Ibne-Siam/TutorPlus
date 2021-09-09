@@ -24,16 +24,22 @@
       $insert_user = "insert into user(fname, lname, email, password, pnum, gender)
       value('$fname','$lname','$email','$password','$pnum','$gender');";
       mysqli_query($conn, $insert_user);
+
       if($usertype == '1'){
         $insert_tutor = "insert into tutor(user_email)
         value('$email');";
         mysqli_query($conn, $insert_tutor);
+        session_start();
+        $_SESSION['email'] = $email;
         echo "<script>window.open('./../tutor.php','_self') </script>";
         exit();
+
       } else if($usertype == '2'){
         $insert_student = "insert into student(user_email)
         value('$email');";
         mysqli_query($conn, $insert_student);
+        session_start();
+        $_SESSION['email'] = $email;
         echo "<script>window.open('./../student.php','_self') </script>";
         exit();
       }

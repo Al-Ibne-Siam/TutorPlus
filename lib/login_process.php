@@ -1,5 +1,6 @@
 <?php
 require_once("connection.php");
+
 if(isset($_POST['sublogin'])){
 $login = $_POST['login_var'];
 $password = $_POST['password'];
@@ -21,7 +22,7 @@ if($numRows  == 1){
 }
 
 if(isset($_POST['login'])){
-$login = $_POST['uname'];
+$login = $_POST['email'];
 $password = sha1($_POST['password']);
 
 $check = "select * from user where email = '$login' and password = '$password';";
@@ -31,10 +32,16 @@ if(mysqli_num_rows($query) == 1){
 
     $user_check = "select * from tutor where user_email = '$login';";
     $userQuery = mysqli_query($conn, $user_check);
+
     if(mysqli_num_rows($userQuery) == 1) {
+      session_start();
+      $_SESSION['email'] = $login;
       echo "<script>window.open('./../tutor.php','_self') </script>";
       exit();
+
     } else {
+      session_start();
+      $_SESSION['email'] = $login;
       echo "<script>window.open('./../student.php','_self') </script>";
       exit();
     }
