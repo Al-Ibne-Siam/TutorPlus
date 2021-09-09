@@ -1,4 +1,5 @@
 <!doctype html>
+<?php require_once("lib/connection.php"); ?>
 <html class="no-js" lang="">
 
 <head>
@@ -56,17 +57,26 @@
             <a href="#" class="active" id="login-box-link">Login</a>
           </div>
 
-          <form class="email-login">
+          <form class="email-login" action="lib/login_process.php" method="POST">
+
+            <?php
+if(isset($_GET['loginerror'])) {
+	$loginerror=$_GET['loginerror'];
+}
+ if(!empty($loginerror)){  echo '<p class="errmsg">Invalid login credentials, Please Try Again..</p>'; } ?>
+
             <div class="u-form-group">
-              <input type="email" placeholder="Email"/>
+              <input name="login_var" value="<?php if(!empty($loginerror)){ echo  $loginerror; } ?>" type="text" placeholder="Email Or Username"/>
             </div>
             <div class="u-form-group">
-              <input type="password" placeholder="Password"/>
+              <input type="password" name="password" placeholder="Password"/>
             </div>
             <div class="u-form-group">
-              <button>Log in</button>
+              <button type="submit" name="sublogin">Log in</button>
             </div>
           </form>
+
+
         </div>
     </div>
   </div>
