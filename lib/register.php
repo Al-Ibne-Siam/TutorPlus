@@ -7,6 +7,9 @@
   $password =  $_POST['password'];
   $pnum = $_POST['pnum'];
   $gender = $_POST['gender'];
+  $usertype = $_POST['usertype'];
+
+  echo $usertype;
 
   if(isset($_POST['register'])){
 
@@ -21,6 +24,19 @@
       $insert_user = "insert into user(fname, lname, email, password, pnum, gender)
       value('$fname','$lname','$email','$password','$pnum','$gender');";
       mysqli_query($conn, $insert_user);
+      if($usertype == '1'){
+        $insert_tutor = "insert into tutor(user_email)
+        value('$email');";
+        mysqli_query($conn, $insert_tutor);
+        echo "<script>window.open('./../instructor_dashboard.html','_self') </script>";
+        exit();
+      } else if($usertype == '2'){
+        $insert_student = "insert into student(user_email)
+        value('$email');";
+        mysqli_query($conn, $insert_student);
+        echo "<script>window.open('./../dashboard.html','_self') </script>";
+        exit();
+      }
     }
 
   } else {
