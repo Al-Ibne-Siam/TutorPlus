@@ -15,7 +15,7 @@
 
     if(mysqli_num_rows($run_query) > 0) {
       echo "<script> alert('User already exists. Try a new email') </script>";
-      echo "<script>window.open('../user-registration-form.php') </script>";
+      echo "<script>window.open('./../user-registration-form.php') </script>";
       exit();
     } else {
       $insert_user = "insert into user(fname, lname, email, password, phone_num, gender)
@@ -24,7 +24,7 @@
     }
 
   } else {
-    echo "<script>window.open('../user-registration-form.php') </script>";
+    echo "<script>window.open('./../user-registration-form.php') </script>";
     exit();
   }
 

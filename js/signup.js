@@ -11,10 +11,6 @@ var registerform = document.getElementById('registerform');
 
 function validRegistration(){
 
-  if(usertype.value=="1"){
-    registerform.action = "instructor_dashboard.html";
-  } else registerform.action = "dashboard.html";
-
   if(fname.value==''||fname.value==null){
     alert("Please fill all the fields");
     return false;
