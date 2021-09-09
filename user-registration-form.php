@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <?php
-use tutor-plus\Member;
 
-if (! empty($_POST["login-btn"])) {
-    require_once __DIR__ . '/Model/Member.php';
-    $member = new Member();
-    $loginResult = $member->loginMember();
-}
 ?>
 <html lang="en" dir="ltr">
   <head>
@@ -46,17 +40,17 @@ if (! empty($_POST["login-btn"])) {
                   <div class="col-md-9 register-right">
                     <h2 class="header">Sign Up</h2>
                       <div class="tab-content" id="myTabContent">
-                        <form class="" action="" method="post" id="registerform" onsubmit="return validRegistration()">
+                        <form class="" action="lib/register.php" method="post" id="registerform" onsubmit="return validRegistration()">
                           <div class="row register-form">
                               <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="text" class="form-control" placeholder="First Name *" value="" id="fname" />
+                                      <input type="text" class="form-control" placeholder="First Name *" name="fname" id="fname" />
                                   </div>
                                   <div class="form-group">
-                                      <input type="text" class="form-control" placeholder="Last Name *" value="" id="lname" />
+                                      <input type="text" class="form-control" placeholder="Last Name *" name="lname" id="lname" />
                                   </div>
                                   <div class="form-group">
-                                      <input type="password" class="form-control" placeholder="Password *" value="" id="pw" />
+                                      <input type="password" class="form-control" placeholder="Password *" name="password" id="pw" />
                                   </div>
                                   <div class="form-group">
                                       <input type="password" class="form-control"  placeholder="Confirm Password *" value="" id="cpw" />
@@ -76,13 +70,13 @@ if (! empty($_POST["login-btn"])) {
                               </div>
                               <div class="col-md-6">
                                   <div class="form-group">
-                                      <input type="email" class="form-control" placeholder="Your Email *" value="" id="mail"/>
+                                      <input type="email" class="form-control" placeholder="Your Email *" name="email" id="mail"/>
                                   </div>
                                   <div class="form-group">
-                                      <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" id="pnum" />
+                                      <input type="text" minlength="11" maxlength="11" class="form-control" placeholder="Your Phone *" name="pnum" id="pnum" />
                                   </div>
                                   <div class="form-group">
-                                      <select class="form-control" id="usertype-selection">
+                                      <select class="form-control" id="usertype-selection" name="usertype">
                                           <option value="1">I am a Tutor</option>
                                           <option value="2">I am a Student</option>
                                       </select>
@@ -93,7 +87,7 @@ if (! empty($_POST["login-btn"])) {
                                       I have read and agreed to the terms and conditions
                                     </label>
                                   </div>
-                                  <button type="submit" class="btn btn-lg register-btn" name="register_btn">
+                                  <button type="submit" class="btn btn-lg register-btn" name="register">
                                     Register
                                   </button>
                               </div>
