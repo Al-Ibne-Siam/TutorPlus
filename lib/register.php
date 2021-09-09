@@ -28,13 +28,13 @@
         $insert_tutor = "insert into tutor(user_email)
         value('$email');";
         mysqli_query($conn, $insert_tutor);
-        echo "<script>window.open('./../instructor_dashboard.html','_self') </script>";
+        echo "<script>window.open('./../tutor.php','_self') </script>";
         exit();
       } else if($usertype == '2'){
         $insert_student = "insert into student(user_email)
         value('$email');";
         mysqli_query($conn, $insert_student);
-        echo "<script>window.open('./../dashboard.html','_self') </script>";
+        echo "<script>window.open('./../student.php','_self') </script>";
         exit();
       }
     }
