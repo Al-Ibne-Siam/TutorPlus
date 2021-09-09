@@ -83,7 +83,7 @@
             <h4 class="modal-headline"><strong>Login Your Account</strong></h4>
             <div class="flex-column">
               <!--flex columns align items vertically-->
-              <form class="login-form" method="post" name="login_form" onsubmit="return validated()">
+              <form class="login-form" method="post" name="login_form"  action="lib/login_process.php" onsubmit="return validated()">
                 <!--form control is for visuals-->
                 <input type="text" class="form-control" id="username-login" placeholder="Your user name" name="uname">
                 <div class="error" id="uname_error">
@@ -100,7 +100,7 @@
                     *Please enter your username to reset password!
                   </div>
                 </a>
-                <button type="submit" class="btn btn-lg loginModal-btn">Login</button>
+                <button type="submit" class="btn btn-lg loginModal-btn" name="login">Login</button>
               </form>
             </div>
           </div>
