@@ -66,7 +66,7 @@ if(isset($_GET['loginerror'])) {
  if(!empty($loginerror)){  echo '<p class="errmsg">Invalid login credentials, Please Try Again..</p>'; } ?>
 
             <div class="u-form-group">
-              <input name="login_var" value="<?php if(!empty($loginerror)){ echo  $loginerror; } ?>" type="text" placeholder="Email Or Username"/>
+              <input name="login_var" value="<?php if(!empty($loginerror)){ echo  $loginerror; } ?>" type="email" placeholder="Email"/>
             </div>
             <div class="u-form-group">
               <input type="password" name="password" placeholder="Password"/>
