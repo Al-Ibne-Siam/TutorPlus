@@ -118,24 +118,24 @@ Purchase:
                   <br>
                   <h6 class="card-subtitle mb-2 text-muted">Make sure the info you put are accurate.</h6>
                   <br>
-                  <form class="form-group" action="#" method="post">
-                    <select class="custom-select custom-select-md">
-                      <option selected>Change your curriculum</option>
-                      <option value="1">Bangla medium</option>
-                      <option value="2">English medium</option>
+                  <form class="form-group" action="lib/update.php" method="post">
+                    <select class="custom-select custom-select-md" name="curriculum" required>
+                      <option value="">Change your curriculum</option>
+                      <option value="Bangla Medium">Bangla medium</option>
+                      <option value="English Medium">English medium</option>
                     </select>
                       <br>
                       <br>
-                      <select class="custom-select custom-select-md">
-                        <option selected>Change your background</option>
-                        <option value="1">Science</option>
-                        <option value="2">Commerce</option>
-                        <option value="3">Arts</option>
+                      <select class="custom-select custom-select-md" name="background" required>
+                        <option value="">Change your background</option>
+                        <option value="Science">Science</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Arts">Arts</option>
                       </select>
                       <br>
                       <br>
                       <label for="about me">About Me</label>
-                      <textarea name="aboutme" cols="32" rows="5" placeholder="<?=$_SESSION['background']?>"></textarea>
+                      <textarea name="aboutme" cols="32" rows="5"><?=$_SESSION['about_me']?></textarea>
                       <br>
                       <br>
                       <button type="submit" class="btn btn-primary" name="CV_update">update</button>

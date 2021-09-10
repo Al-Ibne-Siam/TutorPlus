@@ -1,17 +1,16 @@
 <?php
   include("connection.php");
 
-  $fname = $_POST['fname'];
-  $lname = $_POST['lname'];
-  $email = $_POST['email'];
-  $password =  sha1($_POST['password']);
-  $pnum = $_POST['pnum'];
-  $gender = $_POST['gender'];
-  $usertype = $_POST['usertype'];
-
-  echo $usertype;
 
   if(isset($_POST['register'])){
+
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $password =  sha1($_POST['password']);
+    $pnum = $_POST['pnum'];
+    $gender = $_POST['gender'];
+    $usertype = $_POST['usertype'];
 
     $check_email_query = "select * from user where email = '$email'";
     $run_query = mysqli_query($conn, $check_email_query);
