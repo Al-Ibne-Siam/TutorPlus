@@ -25,12 +25,18 @@
       value('$fname','$lname','$email','$password','$pnum','$gender');";
       mysqli_query($conn, $insert_user);
 
+
       if($usertype == '1'){
         $insert_tutor = "insert into tutor(user_email)
         value('$email');";
         mysqli_query($conn, $insert_tutor);
         session_start();
         $_SESSION['email'] = $email;
+        $info = "select fname, lname from user where email = '$email';";
+        $result = mysqli_query($conn, $info);
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['fname'] = $row['fname'];
+        $_SESSION['lname'] = $row['lname'];
         echo "<script>window.open('./../tutor.php','_self') </script>";
         exit();
 
@@ -40,6 +46,11 @@
         mysqli_query($conn, $insert_student);
         session_start();
         $_SESSION['email'] = $email;
+        $info = "select fname, lname from user where email = '$email';";
+        $result = mysqli_query($conn, $info);
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['fname'] = $row['fname'];
+        $_SESSION['lname'] = $row['lname'];
         echo "<script>window.open('./../student.php','_self') </script>";
         exit();
       }
