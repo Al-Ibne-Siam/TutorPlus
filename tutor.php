@@ -152,31 +152,56 @@ Purchase:
 									<li role="presentation" class="active"><a href="#my" aria-controls="my" role="tab" data-toggle="tab">courses</a></li>
 								</ul>
 
+
+
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="my">
 										<div class="ed_inner_dashboard_info">
 											<h2>Students</h2>
-											<div class="row">
-												<div class="ed_mostrecomeded_course_slider">
-													<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ed_bottompadder20">
-														<div class="ed_item_img">
-															<img src="http://placehold.it/248X156" alt="item1" class="img-responsive">
-														</div>
-														<div class="ed_item_description ed_most_recomended_data">
-																<h4><a href="course_single.html"> Student Name</a></h4>
-                                <h5>Salary: ৳1000-৳10000</h5>
-                                <h5>Area: </h5>
-                                <h5>Institution: </h5>
-                                <h5>Curriculum: </h5>
-                                <h5>Background: </h5>
-                                <textarea disabled rows="5" cols="30">Project-Based Learning is a flexible tool for framing given academic standards into flexible tool for framing.
-                                </textarea>
-																<a href="course_single.html" class="ed_getinvolved">Interested<i class="fa fa-long-arrow-right"></i></a>
-														</div>
-													</div>
-												</div>
-											</div>
+                      <?php
+                        include('lib/connection.php');
+                        $view_student = "select *
+                                          from (select email, fname, lname, gender from user) u join student s
+                                          on u.email = s.user_email
+                                          order by rand();";
+                        $run = mysqli_query($conn, $view_student);
+                        while($row = mysqli_fetch_array($run)){
+                          $studen_email = $row[0];
+                          $fname = $row[1];
+                          $lname = $row[2];
+                          $gender = $row[3];
+                          $institution = $row[5];
+                          $background = $row[6];
+                          $curriculum = $row[7];
+                          $more_info = $row[8];
+                          $min_fees = $row[9];
+                          $max_fees = $row[10];
+                          $location = $row[11];
+                        ?>
+                          <div class="row">
+    												<div class="ed_mostrecomeded_course_slider">
+    													<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ed_bottompadder20">
+    														<div class="ed_item_img">
+    															<img src="http://placehold.it/248X156" alt="item1" class="img-responsive">
+    														</div>
+    														<div class="ed_item_description ed_most_recomended_data">
+    																<h4><a href="course_single.html"><?=$fname?> <?=$lname?></a></h4>
+                                    <h5>Salary: ৳<?=$min_fees?>-৳<?=$max_fees?></h5>
+                                    <h5>Area: <?=$location?> </h5>
+                                    <h5>Institution: <?=$institution?></h5>
+                                    <h5>Curriculum: <?=$curriculum?> </h5>
+                                    <h5>Background:<?=$background?> </h5>
+                                    <h5>Gender: <?=$gender?> </h5>
+                                    <textarea disabled rows="5" cols="30"><?=$more_info?></textarea>
+    																<a href="course_single.html" class="ed_getinvolved">Interested<i class="fa fa-long-arrow-right"></i></a>
+    														</div>
+    													</div>
+    												</div>
+    											</div>
+                          <?php
+                        }
+                       ?>
 										</div>
 									</div>
 								</div>
