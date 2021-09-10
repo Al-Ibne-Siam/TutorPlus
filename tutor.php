@@ -60,7 +60,7 @@ Purchase:
 						<ul class="nav nav-tabs">
 						  <li class="active"><a href="#a" data-toggle="tab">profile</a></li>
 						  <li><a href="#b" data-toggle="tab">students <span>4</span></a></li>
-						  <li><a href="#c" data-toggle="tab">activity</a></li>
+						  <li><a href="#c" data-toggle="tab">View Matches</a></li>
 							<li><a href="lib/logout.php">logout</a></li>
 						</ul>
 					</div>
@@ -224,11 +224,30 @@ Purchase:
 									<div role="tabpanel" class="tab-pane active" id="personal">
 									<div class="ed_inner_dashboard_info">
 										<div class="ed_course_single_info">
-											<div class="ed_add_students">
-												<h4>Congratulations! You have matched with Student A</h4>
-												<h6>Contact student ASAP!</h6>
-                        <textarea disabled rows="2" cols="40">Phone:01990188461 email:alibnesiam@gmail.com</textarea>
-											</div>
+                      <?php
+                        include('lib/connection.php');
+                        $match = "select fname, lname, email, pnum
+                                  from user
+                                  where email = any (select distinct s.student_email
+                                  from student_shortlist s join tutor_shortlist t
+                                  on s.tutor_email = t.tutor_email
+                                  where s.student_email = t.student_email);";
+                        $matchExist = mysqli_query($conn, $match);
+                        while($row = mysqli_fetch_array($matchExist)){
+                          $fname = $row[0];
+                          $lname = $row[1];
+                          $email = $row[2];
+                          $pnum = $row[3];
+                          ?>
+
+                          <div class="ed_add_students">
+    												<h4>Congratulations! You have matched with <?=$fname?> <?=$lname?></h4>
+    												<h6>Contact student ASAP!</h6>
+                            <textarea disabled rows="2" cols="40">Phone:<?=$pnum?> email:<?=$email?></textarea>
+    											</div>
+                          <?php
+                        }
+                       ?>
 
 											<div class="col-lg-12">
 											<div class="row">
