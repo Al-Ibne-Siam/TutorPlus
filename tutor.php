@@ -135,7 +135,7 @@ Purchase:
                       <br>
                       <br>
                       <label for="about me">About Me</label>
-                      <textarea name="aboutme" cols="32" rows="5"></textarea>
+                      <textarea name="aboutme" cols="32" rows="5" placeholder="<?=$_SESSION['background']?>"></textarea>
                       <br>
                       <br>
                       <button type="submit" class="btn btn-primary" name="CV_update">update</button>
