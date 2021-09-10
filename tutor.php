@@ -195,7 +195,7 @@ Purchase:
                                     <h5>Background:<?=$background?> </h5>
                                     <h5>Gender: <?=$gender?> </h5>
                                     <textarea disabled rows="5" cols="30"><?=$more_info?></textarea>
-    																<a href="course_single.html" class="ed_getinvolved">Interested<i class="fa fa-long-arrow-right"></i></a>
+    																<a href="lib/slStudent.php?s_email=<?=$studen_email?>" class="ed_getinvolved">Interested<i class="fa fa-long-arrow-right"></i></a>
     														</div>
     													</div>
                           <?php
