@@ -49,7 +49,7 @@ Purchase:
 					<div class="ed_profile_img">
 					<img src="http://placehold.it/263X263" alt="Profile Image" class="img-responsive" />
 					</div>
-					<h3>joanna simpson</h3>
+					<h3><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></h3>
 					<p><span>active :- </span> 20 Min ago</p>
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
@@ -76,7 +76,7 @@ Purchase:
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="view">
 									<div class="ed_inner_dashboard_info">
-										<h2> joanna simpson (instructor)</h2>
+										<h2> <?=$_SESSION['fname']?> <?=$_SESSION['lname']?> (instructor)</h2>
 										<table id="profile_view_settings">
 											<thead>
 												<tr>

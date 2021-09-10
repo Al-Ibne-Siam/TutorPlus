@@ -86,7 +86,7 @@
               <!--flex columns align items vertically-->
               <form class="login-form" method="post" name="login_form"  action="lib/login_process.php" onsubmit="return validated()">
                 <!--form control is for visuals-->
-                <input type="text" class="form-control" id="username-login" placeholder="Your user name" name="email">
+                <input type="text" class="form-control" id="username-login" placeholder="Your email" name="email">
                 <div class="error" id="uname_error">
                   *email can not be empty!
                 </div>

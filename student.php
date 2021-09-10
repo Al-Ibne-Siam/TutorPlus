@@ -50,7 +50,7 @@ Purchase:
 					<div class="ed_profile_img">
 					<img src="http://placehold.it/263X263" alt="Dashboard Image" />
 					</div>
-					<h3>andre house</h3>
+					<h3><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></h3>
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
 						  <li class="active"><a href="#dashboard" data-toggle="tab">dashboard</a></li>
@@ -71,7 +71,7 @@ Purchase:
 						<div class="ed_dashboard_tab_info">
 						<h1>hello, <span>student</span></h1>
 						<h1>welcome to dashboard</h1>
-						<p>Hi <strong>Andre House</strong>, here you have to see and update your profile, subscribed courses, activities, notifications and other things. All the above updates can be modified from the left panel provided.</p>
+						<p>Hi <strong><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></strong>, here you have to see and update your profile, subscribed courses, activities, notifications and other things. All the above updates can be modified from the left panel provided.</p>
 						</div>
 					</div>
 					<div class="tab-pane" id="courses">

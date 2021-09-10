@@ -30,12 +30,19 @@ $query = mysqli_query($conn, $check);
 
 if(mysqli_num_rows($query) == 1){
 
+    session_start();
+    
     $user_check = "select * from tutor where user_email = '$login';";
     $userQuery = mysqli_query($conn, $user_check);
 
+    $_SESSION['email'] = $login;
+    $info = "select fname, lname from user where email = '$login';";
+    $result = mysqli_query($conn, $info);
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['fname'] = $row['fname'];
+    $_SESSION['lname'] = $row['lname'];
+
     if(mysqli_num_rows($userQuery) == 1) {
-      session_start();
-      $_SESSION['email'] = $login;
       echo "<script>window.open('./../tutor.php','_self') </script>";
       exit();
 
