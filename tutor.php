@@ -62,6 +62,7 @@ Purchase:
 						  <li><a href="#b" data-toggle="tab">students <span>4</span></a></li>
 						  <li><a href="#c" data-toggle="tab">View Matches</a></li>
 							<li><a href="lib/logout.php">logout</a></li>
+              <li><a data-toggle="modal" data-target="#delete-confirm">Delete account</a></li>
 						</ul>
 					</div>
 				</div>
@@ -300,6 +301,25 @@ Purchase:
 </div>
 <!--instructor single end-->
 
+</div>
+<div class="modal fade" id="delete-confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Warning!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <form class="" action="lib/deleteUser.php" method="post">
+          <h4>Are you sure you want to delete your account?</h4>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" name="user-delete">Confirm delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <!--Page main section end-->
 <!--main js file start-->
