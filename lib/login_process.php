@@ -43,6 +43,11 @@ if(mysqli_num_rows($query) == 1){
     $_SESSION['lname'] = $row['lname'];
 
     if(mysqli_num_rows($userQuery) == 1) {
+      $result2 = mysqli_query($conn, $user_check);
+      $row2 = mysqli_fetch_assoc($result2);
+      $_SESSION['curriculum'] = $row2['curriculum'];
+      $_SESSION['background'] = $row2['background'];
+      $_SESSION['about_me'] = $row2['about_me'];
       echo "<script>window.open('./../tutor.php','_self') </script>";
       exit();
 

@@ -32,6 +32,9 @@
         mysqli_query($conn, $insert_tutor);
         session_start();
         $_SESSION['email'] = $email;
+        $_SESSION['curriculum'] = "No info";
+        $_SESSION['background'] = "No info";
+        $_SESSION['about_me'] = "Empty";
         $info = "select fname, lname from user where email = '$email';";
         $result = mysqli_query($conn, $info);
         $row = mysqli_fetch_assoc($result);

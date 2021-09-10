@@ -54,7 +54,7 @@ Purchase:
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
 						  <li class="active"><a href="#dashboard" data-toggle="tab">dashboard</a></li>
-						  <li><a href="#courses" data-toggle="tab">tuitors <span>4</span></a></li>
+						  <li><a href="#courses" data-toggle="tab">tutors <span>4</span></a></li>
 						  <li><a href="#activity" data-toggle="tab">activity</a></li>
 						  <li><a href="#notification" data-toggle="tab">notifications <span>0</span></a></li>
 						  <li><a href="#profile" data-toggle="tab">profile</a></li>
@@ -88,7 +88,7 @@ Purchase:
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="my">
 									<div class="ed_inner_dashboard_info">
-									<h2>you have 4 tuitors nearby</h2>
+									<h2>you have 4 tutors nearby</h2>
 										<div class="row">
 											<div class="ed_mostrecomeded_course_slider">
 												<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ed_bottompadder20">

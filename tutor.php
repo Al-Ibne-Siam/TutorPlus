@@ -30,6 +30,11 @@ Purchase:
 <meta name="author"  content="Kamleshyadav"/>
 <meta name="MobileOptimized" content="320" />
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <!--srart theme style -->
 <link href="css/main.css" rel="stylesheet" type="text/css"/>
 <!-- end theme style -->
@@ -81,15 +86,15 @@ Purchase:
 											<thead>
 												<tr>
 													<th>Name</th>
-													<th>Location</th>
-													<th>Intro</th>
+													<th>Curriculum</th>
+													<th>background</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td>Joanna Simpson</td>
-													<td>London</td>
-													<td>I am Joanna Simpson. I am from London.</td>
+													<td><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></td>
+													<td><?=$_SESSION['curriculum']?></td>
+													<td><?=$_SESSION['background']?></td>
 												</tr>
 											</tbody>
 										</table>
@@ -104,6 +109,40 @@ Purchase:
 						<div class="premium-box">
 							<h3>Congratulations, you are a premium user!</h3>
 						</div>
+            <br>
+            <br>
+            <div class="myinfo">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-title">Update CV</h3>
+                  <br>
+                  <h6 class="card-subtitle mb-2 text-muted">Make sure the info you put are accurate.</h6>
+                  <br>
+                  <form class="form-group" action="#" method="post">
+                    <select class="custom-select custom-select-md">
+                      <option selected>Change your curriculum</option>
+                      <option value="1">Bangla medium</option>
+                      <option value="2">English medium</option>
+                    </select>
+                      <br>
+                      <br>
+                      <select class="custom-select custom-select-md">
+                        <option selected>Change your background</option>
+                        <option value="1">Science</option>
+                        <option value="2">Commerce</option>
+                        <option value="3">Arts</option>
+                      </select>
+                      <br>
+                      <br>
+                      <label for="about me">About Me</label>
+                      <textarea name="aboutme" cols="32" rows="5"></textarea>
+                      <br>
+                      <br>
+                      <button type="submit" class="btn btn-primary" name="CV_update">update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
 					</div>
 					<div class="tab-pane" id="b">
 						<div class="ed_dashboard_inner_tab">
@@ -118,7 +157,7 @@ Purchase:
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="my">
 										<div class="ed_inner_dashboard_info">
-											<h2>Students Nearby</h2>
+											<h2>Students</h2>
 											<div class="row">
 												<div class="ed_mostrecomeded_course_slider">
 													<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ed_bottompadder20">
