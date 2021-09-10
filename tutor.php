@@ -159,6 +159,8 @@ Purchase:
 									<div role="tabpanel" class="tab-pane active" id="my">
 										<div class="ed_inner_dashboard_info">
 											<h2>Students</h2>
+                      <div class="row">
+                        <div class="ed_mostrecomeded_course_slider">
                       <?php
                         include('lib/connection.php');
                         $view_student = "select *
@@ -179,8 +181,7 @@ Purchase:
                           $max_fees = $row[10];
                           $location = $row[11];
                         ?>
-                          <div class="row">
-    												<div class="ed_mostrecomeded_course_slider">
+
     													<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ed_bottompadder20">
     														<div class="ed_item_img">
     															<img src="http://placehold.it/248X156" alt="item1" class="img-responsive">
@@ -197,11 +198,11 @@ Purchase:
     																<a href="course_single.html" class="ed_getinvolved">Interested<i class="fa fa-long-arrow-right"></i></a>
     														</div>
     													</div>
-    												</div>
-    											</div>
                           <?php
                         }
                        ?>
+                       </div>
+                       </div>
 										</div>
 									</div>
 								</div>
