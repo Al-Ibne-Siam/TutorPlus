@@ -30,10 +30,7 @@ Purchase:
 <meta name="author"  content="Kamleshyadav"/>
 <meta name="MobileOptimized" content="320" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 <!--srart theme style -->
 <link href="css/main.css" rel="stylesheet" type="text/css"/>
@@ -59,7 +56,7 @@ Purchase:
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
 						  <li class="active"><a href="#a" data-toggle="tab">profile</a></li>
-						  <li><a href="#b" data-toggle="tab">students <span>4</span></a></li>
+						  <li><a href="#b" data-toggle="tab">students</a></li>
 						  <li><a href="#c" data-toggle="tab">View Matches</a></li>
 							<li><a href="lib/logout.php">logout</a></li>
               <li><a data-toggle="modal" data-target="#delete-confirm">Delete account</a></li>
@@ -112,22 +109,22 @@ Purchase:
 						</div>
             <br>
             <br>
+            <div class="ed_dashboard_inner_tab">
             <div class="myinfo">
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h3 class="card-title">Update CV</h3>
-                  <br>
+
                   <h6 class="card-subtitle mb-2 text-muted">Make sure the info you put are accurate.</h6>
-                  <br>
+
                   <form class="form-group" action="lib/update.php" method="post">
-                    <select class="custom-select custom-select-md" name="curriculum" required>
+                    <select class="custom-select custom-select-lg cselect" name="curriculum" required>
                       <option value="">Change your curriculum</option>
                       <option value="Bangla Medium">Bangla medium</option>
                       <option value="English Medium">English medium</option>
                     </select>
-                      <br>
-                      <br>
-                      <select class="custom-select custom-select-md" name="background" required>
+                    <br>
+                      <select class="custom-select custom-select-lg bselect" name="background" required>
                         <option value="">Change your background</option>
                         <option value="Science">Science</option>
                         <option value="Commerce">Commerce</option>
@@ -135,8 +132,9 @@ Purchase:
                       </select>
                       <br>
                       <br>
+                      <br>
                       <label for="about me">About Me</label>
-                      <textarea name="aboutme" cols="32" rows="5"><?=$_SESSION['about_me']?></textarea>
+                      <textarea name="aboutme" cols="38" rows="5"><?=$_SESSION['about_me']?></textarea>
                       <br>
                       <br>
                       <button type="submit" class="btn btn-primary" name="CV_update">update</button>
@@ -145,6 +143,7 @@ Purchase:
               </div>
             </div>
 					</div>
+        </div>
 					<div class="tab-pane" id="b">
 						<div class="ed_dashboard_inner_tab">
 							<div role="tabpanel">
@@ -303,7 +302,7 @@ Purchase:
 
 </div>
 <div class="modal fade" id="delete-confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Warning!</h5>
@@ -311,13 +310,19 @@ Purchase:
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-footer">
-        <form class="" action="lib/deleteUser.php" method="post">
-          <h4>Are you sure you want to delete your account?</h4>
+
+        <form class="delete-form" action="lib/deleteUser.php" method="post">
+          <div class="modal-body">
+            <h4>Are you sure you want to delete your account?
+              <br>
+              Doing so will delete all your existing records.
+            </h4>
+          </div>
+          <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           <button type="submit" class="btn btn-primary" name="user-delete">Confirm delete</button>
+          </div>
         </form>
-      </div>
     </div>
   </div>
 </div>
