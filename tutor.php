@@ -23,7 +23,7 @@ Purchase:
 <!-- Begin Head -->
 <head>
 <meta charset="utf-8" />
-<title>Tuitor's Dashboard</title>
+<title>Tutor's Dashboard</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <meta name="description"  content="Educo"/>
 <meta name="keywords" content="Educo, html template, Education template" />
@@ -55,9 +55,21 @@ Purchase:
 					<p><span>active :- </span> 20 Min ago</p>
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
+              <?php
+              include('lib/connection.php');
+              $q = "select count(*) from student;";
+              $nOfStudents = mysqli_fetch_array(mysqli_query($conn, $q));
+              $q2  = "select count(*)
+                      from user
+                      where email = any (select distinct s.student_email
+                      from student_shortlist s join tutor_shortlist t
+                      on s.tutor_email = t.tutor_email
+                      where s.student_email = t.student_email);";
+              $nOfMatches = mysqli_fetch_array(mysqli_query($conn, $q2));
+              ?>
 						  <li class="active"><a href="#a" data-toggle="tab">profile</a></li>
-						  <li><a href="#b" data-toggle="tab">students</a></li>
-						  <li><a href="#c" data-toggle="tab">View Matches</a></li>
+						  <li><a href="#b" data-toggle="tab">students <span><?=$nOfStudents[0]?></span></a></li>
+						  <li><a href="#c" data-toggle="tab">View Matches <span><?=$nOfMatches[0]?></span></a></li>
 							<li><a href="lib/logout.php">logout</a></li>
               <li><a data-toggle="modal" data-target="#delete-confirm">Delete account</a></li>
 						</ul>
@@ -72,14 +84,14 @@ Purchase:
 							<div role="tabpanel">
 								<!-- Nav tabs -->
 								<ul class="nav nav-tabs" role="tablist">
-									<li role="presentation" class="active"><a href="#view" aria-controls="view" role="tab" data-toggle="tab">instructor Detail</a></li>
+									<li role="presentation" class="active"><a href="#view" aria-controls="view" role="tab" data-toggle="tab">Your Details</a></li>
 								</ul>
 
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="view">
 									<div class="ed_inner_dashboard_info">
-										<h2> <?=$_SESSION['fname']?> <?=$_SESSION['lname']?> (instructor)</h2>
+										<h2> <?=$_SESSION['fname']?> <?=$_SESSION['lname']?> (Tutor)</h2>
 										<table id="profile_view_settings">
 											<thead>
 												<tr>
