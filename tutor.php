@@ -253,9 +253,14 @@ Purchase:
                           ?>
 
                           <div class="ed_add_students">
-    												<h4>Congratulations! You have matched with <?=$fname?> <?=$lname?></h4>
-    												<h6>Contact student ASAP!</h6>
-                            <textarea disabled rows="2" cols="40">Phone:<?=$pnum?> email:<?=$email?></textarea>
+                            <form class="" action="lib/dismiss.php?s_email=<?=$email?>" method="post">
+                                <h4>Congratulations! <br> <br> You have matched with <?=$fname?> <?=$lname?></h4>
+        												<h6>Contact student ASAP!</h6>
+                                <textarea disabled rows="2" cols="40">Phone:<?=$pnum?>      email:<?=$email?></textarea>
+                                <br>
+                                <br>
+                                <button type="submit" name="dismissal-button">Dismiss</button>
+                            </form>
     											</div>
                           <?php
                         }
