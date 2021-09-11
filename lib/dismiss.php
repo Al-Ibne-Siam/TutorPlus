@@ -1,4 +1,6 @@
 <?php
+if(isset($_POST['dismissal-button']))
+{
   include('connection.php');
   session_start();
   $studen_email = $_GET['s_email'];
@@ -10,4 +12,8 @@
 
   echo "<script>window.open('./../tutor.php','_self') </script>";
   exit();
+}else {
+  echo "<script>window.open('./../index.php','_self') </script>";
+  exit();
+}
  ?>
