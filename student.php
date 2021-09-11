@@ -53,13 +53,13 @@ Purchase:
 					<h3><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></h3>
 					 <div class="ed_tabs_left">
 						<ul class="nav nav-tabs">
-						  <li class="active"><a href="#dashboard" data-toggle="tab">dashboard</a></li>
+              <li><a href="#profile" data-toggle="tab">profile</a></li>
+						  <li><a href="#setting" data-toggle="tab">setting</a></li>
 						  <li><a href="#courses" data-toggle="tab">tutors <span>4</span></a></li>
 						  <li><a href="#activity" data-toggle="tab">activity</a></li>
 						  <li><a href="#notification" data-toggle="tab">notifications <span>0</span></a></li>
-						  <li><a href="#profile" data-toggle="tab">profile</a></li>
-						  <li><a href="#setting" data-toggle="tab">setting</a></li>
 						  <li><a href="lib/logout.php">logout</a></li>
+              <li><a data-toggle="modal" data-target="#delete-confirm">Delete account</a></li>
 						</ul>
 					</div>
 				</div>
@@ -68,11 +68,7 @@ Purchase:
 			<div class="ed_dashboard_tab">
 				<div class="tab-content">
 					<div class="tab-pane active" id="dashboard">
-						<div class="ed_dashboard_tab_info">
-						<h1>hello, <span>student</span></h1>
-						<h1>welcome to dashboard</h1>
-						<p>Hi <strong><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></strong>, here you have to see and update your profile, subscribed courses, activities, notifications and other things. All the above updates can be modified from the left panel provided.</p>
-						</div>
+
 					</div>
 					<div class="tab-pane" id="courses">
 						<div class="ed_dashboard_inner_tab">
@@ -343,6 +339,9 @@ Purchase:
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="view">
 									<div class="ed_dashboard_inner_tab">
+        						<h1>hello, <span>student</span></h1>
+        						<h1>welcome to dashboard</h1>
+        						<p>Hi <strong><?=$_SESSION['fname']?> <?=$_SESSION['lname']?></strong>, here you have to see and update your profile, subscribed courses, activities, notifications and other things. All the above updates can be modified from the left panel provided.</p>
 										<h2>your profile</h2>
 										<table id="profile_view_settings">
 											<thead>
@@ -519,6 +518,32 @@ Purchase:
 </div>
 <!--single student detail end-->
 <!--Footer Top section start-->
+</div>
+
+<div class="modal fade" id="delete-confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Warning!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+        <form class="delete-form" action="lib/deleteUser.php" method="post">
+          <div class="modal-body">
+            <h4>Are you sure you want to delete your account?
+              <br>
+              Doing so will delete all your existing records.
+            </h4>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" name="user-delete">Confirm delete</button>
+          </div>
+        </form>
+    </div>
+  </div>
 </div>
 <!--Page main section end-->
 <!--main js file start-->
